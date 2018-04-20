@@ -1,4 +1,5 @@
 import { Component, OnInit,Input } from '@angular/core';
+import {ActivatedRoute} from '@angular/router'; 
 
 export class Joke {
   public setup: string;
@@ -25,7 +26,13 @@ export class Joke {
 })
 export class JokeComponent implements OnInit {
   @Input() joke:object;
-  constructor() { }
+  id:number;
+  constructor(private route:ActivatedRoute) {
+    this.route.params.subscribe(params=>{
+      //console.log(params);
+      this.id=params.id
+    });
+   }
 
   ngOnInit() {
   }

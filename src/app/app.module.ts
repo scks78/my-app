@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { RouterModule,Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { JokeComponent } from './joke/joke.component';
@@ -14,7 +13,9 @@ const appRoutes:Routes =[
   {path: '',component:HomeComponent},
   {path: 'jokes',component:JokelistComponent},
   {path: 'joke-list',redirectTo:'jokes'},
+  {path: 'joke/:id',component:JokeComponent},
   {path: '**',component:PageNotFoundComponent},
+  //{path: 'joke/foo',component:FooComponent},
 ];
 
 
