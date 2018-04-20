@@ -48,7 +48,7 @@ export class JokeComponent {
 
     constuctor() {
         this.setup='What did the cheese say when it looked in the mirror?';
-        this.punchline='Halloumi (Hello Me)';
+        this.punchline='Halloumi (Hello Me Too)';
     }
 }
 
