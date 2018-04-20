@@ -8,6 +8,7 @@ import {Joke} from '../joke.component';
 })
 export class JokeFormComponent implements OnInit {
   @Output() jokeCreated =new EventEmitter();
+  @Output() jokeDeleted =new EventEmitter();
   constructor() { }
 
   ngOnInit() {
@@ -18,6 +19,5 @@ export class JokeFormComponent implements OnInit {
   // }
   createJoke(setup: string,punchline: string){
     this.jokeCreated.emit(new Joke(setup,punchline));
- }
-
+  }
 }

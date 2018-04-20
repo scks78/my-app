@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
 import {ActivatedRoute} from '@angular/router'; 
 
 export class Joke {
@@ -25,7 +25,9 @@ export class Joke {
   styleUrls: ['./joke.component.css']
 })
 export class JokeComponent implements OnInit {
-  @Input() joke:object;
+  //@Input() joke:object;
+  @Input() joke:Joke;
+  @Output() jokeDeleted =new EventEmitter<Joke>();
   id:number;
   constructor(private route:ActivatedRoute) {
     this.route.params.subscribe(params=>{
@@ -36,5 +38,8 @@ export class JokeComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  
+  jokeDelete(){
+    this.jokeDeleted.emit(this.joke);
+  }
 }

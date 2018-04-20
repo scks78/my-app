@@ -5,5 +5,6 @@
       <p class="card-text" [hidden]="joke.hide">{{ joke.punchline }}</p>
   <!--<button class="btn btn-primary" (click)="toggle(joke)" role="button">Tell me</button>-->
       <button class="btn btn-primary" (click)="joke.toggle()" role="button">Tell me</button>
+      <button (click) ="jokeDelete()" type="submit" class="btn btn-primary">Delete</button>
   </div>
   </div>

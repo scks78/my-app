@@ -20,7 +20,13 @@ export class JokelistComponent implements OnInit {
     this.jokes.unshift(joke);
   }
 
-  ngOnInit() {
+  deleteJoke(joke){
+    const indexToDelete=this.jokes.indexOf(joke);
+    if(indexToDelete !== -1){
+      this.jokes.splice(indexToDelete,1);
+    }
   }
 
+  ngOnInit() {
+  }
 }
